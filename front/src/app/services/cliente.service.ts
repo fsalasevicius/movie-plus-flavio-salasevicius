@@ -32,6 +32,11 @@ export class ClienteService {
     return this._http.post(this.url+'agregar_carrito',data,{headers:headers});
   }
 
+  compra_cliente(data:any,token:any):Observable<any>{
+    let headers = new HttpHeaders({'Content-Type':'application/json','Authorization':token});
+    return this._http.post(this.url+'compra_cliente',data,{headers:headers});
+  }
+
   isAuthenticate(){
     const token : any = localStorage.getItem('token');
   
