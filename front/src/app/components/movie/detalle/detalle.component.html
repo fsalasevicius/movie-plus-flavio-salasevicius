@@ -1,0 +1,32 @@
+<app-header></app-header>
+<div class="contenedor">
+    <div *ngFor="let element of peli_arr" class="mt-4">
+        <div class="pelicula-detalle" *ngIf="element._id==id">
+            <div class="contenedor">
+                <img src="{{element.img}}" alt="{{element.alt}}" >
+                <h3 class="titulo">{{element.nombre}}</h3>
+                <p class="descripcion">
+                    {{element.descripcion}}
+                </p>
+                <button role="button" class="btn btn-primary mt-2"><i class="fas fa-play padrig"></i>Reproducir</button
+                    >
+                    
+				<button class="btn btn-success  marleft mt-2"  (click)="agregar_producto()">Comprar <i class="fas fa-shopping-cart"></i></button>
+            </div>
+        </div>
+        
+    </div>
+
+
+    <div class="peliculas-recomendadas contenedor">
+                <div class="carousel-cell" *ngFor="let element of peli_arr">
+                    <div *ngIf="element._id==id"  class="descripcion">
+                        <h4>Géneros: {{element.genero}}</h4>
+                        <h4>Duración: {{element.duracion}}</h4>
+                        <h4>Elenco: {{element.elenco}}</h4>
+                        <h4>Clasificación: {{element.clasificacion}}</h4>
+                        <h4>Año de estreno: {{element.estreno}}</h4>
+                    </div>                
+                </div>
+    </div>
+</div>

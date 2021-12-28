@@ -1,0 +1,43 @@
+<app-header></app-header>
+    
+		<section class="portfolio-area pt-60">
+			<div class="container">
+				<div class="row flexbox-center">
+					<div class="col-lg-6 text-center text-lg-left">
+					    <div class="section-title">
+							<h1 class="titulo">Mi Selección</h1>
+						</div>
+					</div>
+				</div>
+				<hr />
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="row portfolio-item">
+							<div class="col-md-4 col-sm-6 soon released"  *ngFor="let element of peli_arr">
+								<div class="single-portfolio">
+									<div class="single-portfolio-img">
+                                        <a routerLink="{{element.id}}"><img src="{{element.img}}" alt="{{element.alt}}" ></a>
+										<a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
+											<i class="icofont icofont-ui-play"></i>
+										</a>
+									</div>
+									<div class="portfolio-content">
+										<p class="descripcion mt-4">{{element.nombre}}</p>
+										<div class="review">
+											<div class="author-review">
+												<i class="fas fa-star star-gold"></i>
+												<i class="far fa-star text-white"></i>
+											</div>
+                                            <button class="btn btn-primary mb-4" routerLink="{{element.id}}" >Ver</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<app-footer></app-footer>
+

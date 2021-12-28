@@ -1,0 +1,44 @@
+<header>
+	<div class="contenedor">
+		<nav class="header_menu mobile-menu">
+			<ul>
+				<li class="active"><a routerLink="/" class="activo">Inicio</a></li>
+				<li><a routerLink="/peliculas">Películas</a></li>
+				<li><a class="btn-carrito" style="cursor:pointer" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"  (click)="obtener_carrito()"><i class="fas fa-shopping-cart"></i></a></li>
+				<li>
+					<ng-container *ngIf="user != undefined">
+						<a routerLink="/mi-lista"><i class="fas fa-user"></i> {{user.nombre}}  <span class="arrow_carrot-down"></span></a>
+							<ul class="dropdown">
+								<li><a routerLink="/mi-perfil"  style="cursor:pointer"><i class="fas fa-id-card"></i> Mis Datos</a></li>
+								<li><a routerLink="/mis-compras"    style="cursor:pointer"><i class="fas fa-credit-card"></i> Mis Compras</a></li>
+								<li><a (click)="logout()"  style="cursor:pointer"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+							</ul>
+					</ng-container></li>
+				<li>
+					<ng-container *ngIf="user == undefined">
+						<a routerLink="/login">Login</a>
+					</ng-container>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 id="offcanvasRightLabel">Carrito de Compras</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+	<div class="modal-carrito" *ngFor="let element of carrito_cliente">
+        <p class="text-muted mr-2">{{element.producto.nombre}} - ${{element.producto.precio}}</p>
+		<img src="{{element.producto.img}}" alt="" class="img-carrito">
+      </div>
+	<div class="d-flex align-items-center justify-content-between mb-3 pb-1">
+        <span class="text-muted mr-2">Subtotal:</span>
+        <span class="h4 mb-0">${{subtotal}}</span>
+      </div>
+	  <button routerLink="/carrito" class="btn btn-success btn-lg btn-block">Comprar</button>
+  </div>
+</div>
