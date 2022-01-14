@@ -46,6 +46,7 @@ public subtotal = 0;
     this.carrito_cliente.forEach(element => {
       let sub_precio = parseInt(element.producto.precio) * element.cantidad;
       this.subtotal = this.subtotal + sub_precio;
+      
       this.venta.subtotal = this.subtotal;
       console.log(this.venta)
   });

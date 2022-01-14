@@ -5,7 +5,7 @@ var app = express();
 var bodyparser = require('body-parser');
 var mongoose = require('mongoose');
 const { application } = require('express');
-var port = process.env.port || 4201;
+var port = process.env.port || 3030;
 
 var cliente_route = require('./routes/cliente');
 var admin_route = require('./routes/admin');
@@ -13,7 +13,7 @@ var producto_route = require('./routes/producto');
 var carrito_route = require('./routes/carrito');
 var venta_route = require('./routes/venta');
 
-mongoose.connect('mongodb://127.0.0.1:27017/movie',{useUnifiedTopology: true, useNewUrlParser: true},(err, res)=>{
+mongoose.connect('mongodb+srv://fsalasevicius:Coderhouse2022@movie.d0ls6.mongodb.net/test',{useUnifiedTopology: true, useNewUrlParser: true},(err, res)=>{
     if(!err){
         app.listen(port,function(){
             console.log('Servidor Funcionando en el puerto ' + port);

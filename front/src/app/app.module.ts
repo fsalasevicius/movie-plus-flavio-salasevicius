@@ -11,7 +11,6 @@ import { DetalleComponent } from './components/movie/detalle/detalle.component';
 import { PaginaNoEncontradaComponent } from './components/pagina-no-encontrada/pagina-no-encontrada.component';
 import { LoginComponent } from './components/login/login.component';
 import  { ReactiveFormsModule } from '@angular/forms';
-import { RegisterComponent } from './components/register/register.component';
 import { PeliculasComponent } from './components/peliculas/peliculas.component';
 import { MiListaComponent } from './components/mi-lista/mi-lista.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -21,6 +20,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material/material.module';
 import { DatosComponent } from './components/user/datos/datos.component';
 import { ComprasComponent } from './components/user/compras/compras.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -30,14 +31,15 @@ import { ComprasComponent } from './components/user/compras/compras.component';
     DetalleComponent,
     PaginaNoEncontradaComponent,
     LoginComponent,
-    RegisterComponent,
     PeliculasComponent,
     MiListaComponent,
     FooterComponent,
     FilterPipe,
     CarritoComponent,
     DatosComponent,
-    ComprasComponent
+    ComprasComponent,
+    CheckoutComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

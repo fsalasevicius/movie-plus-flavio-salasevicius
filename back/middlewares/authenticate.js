@@ -2,7 +2,7 @@
 
 var jwt = require('jwt-simple');
 var moment = require('moment');
-var secret = 'pragol2021Monithor';
+var secret = 'movie-plus-fsalasevicius';
 
 exports.auth = function(req,res,next){
 
