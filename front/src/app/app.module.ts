@@ -15,7 +15,6 @@ import { PeliculasComponent } from './components/peliculas/peliculas.component';
 import { MiListaComponent } from './components/mi-lista/mi-lista.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FilterPipe } from './pipes/filter.pipe';
-import { CarritoComponent } from './components/carrito/carrito.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material/material.module';
 import { DatosComponent } from './components/user/datos/datos.component';
@@ -35,7 +34,6 @@ import { RegisterComponent } from './components/register/register.component';
     MiListaComponent,
     FooterComponent,
     FilterPipe,
-    CarritoComponent,
     DatosComponent,
     ComprasComponent,
     CheckoutComponent,
