@@ -1,0 +1,111 @@
+<app-header></app-header>
+<section class="portfolio-area pt-60">
+	<div class="container">
+		<div class="row flexbox-center">
+			<div class="col-lg-6 text-center text-lg-left">
+				<div class="section-title">
+					<h1 class="titulo">Listado de Peliculas</h1>
+				</div>
+			</div>
+		</div>
+		<!-- <hr />
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="row portfolio-item">	
+					<ng-container *ngIf="carrito_cliente.length >= 1">		
+					<div class="col-md-4 col-sm-6 soon released"  *ngFor="let element of carrito_cliente">
+						<div class="single-portfolio">
+							<div class="single-portfolio-img">
+								<p class="descripcion mt-4">{{element.producto.nombre}}</p>
+								<img src="{{element.producto.img}}" alt="{{element.producto.alt}}" >
+								<a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
+									<i class="icofont icofont-ui-play"></i>
+								</a>
+							</div>
+							<div class="portfolio-content col-md-10 col-sm-10">
+								<p class="descripcion mt-4">{{element.producto.descripcion}}</p>
+								<div class="review">
+									<div class="author-review" *ngIf="element.producto.stars === '5'">
+										<span class="descripcion">Valoración: </span>
+										<i class="fas fa-star star-gold"></i>
+										<i class="fas fa-star star-gold"></i>
+										<i class="fas fa-star star-gold"></i>
+										<i class="fas fa-star star-gold"></i>
+										<i class="fas fa-star star-gold"></i>	<span class="descripcion marleft">({{element.producto.stars}})</span>												
+									</div>
+									<div class="author-review" *ngIf="element.producto.stars === '4'">
+										<span class="descripcion">Valoración: </span>
+										<i class="fas fa-star star-gold"></i>
+										<i class="fas fa-star star-gold"></i>
+										<i class="fas fa-star star-gold"></i>
+										<i class="fas fa-star star-gold"></i>
+										<i class="far fa-star text-white"></i> <span class="descripcion marleft">({{element.producto.stars}})</span>											
+									</div>
+									<div class="author-review" *ngIf="element.producto.stars === '3'">
+										<span class="descripcion">Valoración: </span>
+										<i class="fas fa-star star-gold"></i>
+										<i class="fas fa-star star-gold"></i>
+										<i class="fas fa-star star-gold"></i>
+										<i class="far fa-star text-white"></i> 
+										<i class="far fa-star text-white"></i> <span class="descripcion marleft">({{element.producto.stars}})</span>											
+									</div>
+									<div class="author-review" *ngIf="element.producto.stars === '2'">
+										<span class="descripcion">Valoración: </span>
+										<i class="fas fa-star star-gold"></i>
+										<i class="fas fa-star star-gold"></i>
+										<i class="far fa-star text-white"></i>
+										<i class="far fa-star text-white"></i>
+										<i class="far fa-star text-white"></i> <span class="descripcion marleft">({{element.producto.stars}})</span>											
+									</div>
+									<div class="author-review" *ngIf="element.producto.stars === '1'">
+										<span class="descripcion">Valoración: </span>
+										<i class="fas fa-star star-gold"></i>
+										<i class="far fa-star text-white"></i>
+										<i class="far fa-star text-white"></i>
+										<i class="far fa-star text-white"></i>
+										<i class="far fa-star text-white"></i> <span class="descripcion marleft">({{element.producto.stars}})</span>											
+									</div>
+									<div class="author-review" *ngIf="element.producto.stars === '0'">
+										<span class="descripcion">Valoración: </span>
+										<i class="far fa-star text-white"></i>
+										<i class="far fa-star text-white"></i>
+										<i class="far fa-star text-white"></i>
+										<i class="far fa-star text-white"></i>
+										<i class="far fa-star text-white"></i> <span class="descripcion marleft">({{element.producto.stars}})</span>											
+									</div>
+									<div class="btn-peliculas-opc">
+										<p class="descripcion pt-2">Fecha de Compra: <br> {{element.creado | date:'dd-MM-yyyy HH:mm:ss'}}  </p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<div class="carrito-card">
+						<div class="col-6 mt-4 mb-4">
+							<p class="titulo-carrito">Total a Pagar: {{subtotal}}</p></div>
+						<div class="col-12 mt-4 mb-4">
+							<button class="btn btn-success btn-lg btn-block">Finalizar Compra</button>
+							  </div>
+					</div>
+				    </ng-container>
+					<ng-container *ngIf="carrito_cliente.length == 0">	
+						<div class="col-md-4 col-sm-6 soon released">
+							<div class="single-portfolio">
+								<div class="single-portfolio-img">
+									<img src="../../../assets/img/carritoVacio.png" alt="Carrito Vacio" width="50%">
+									<p class="descripcion mt-4">Su Carrito Se encuentra vacio</p>
+									<a routerLink="/peliculas" class="btn btn-primary">Ir a la tienda</a>
+								
+								</div>
+							</div>
+						</div>
+						</ng-container>
+				</div>
+			</div>
+		</div> -->
+	</div>
+</section>
+
+
+		<app-footer></app-footer>

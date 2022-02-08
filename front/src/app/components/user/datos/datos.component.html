@@ -1,0 +1,53 @@
+<app-header></app-header>
+    
+		<section class="portfolio-area pt-60">
+			<div class="container">
+				<div class="row flexbox-center">
+					<div class="col-lg-6  text-lg-left">
+					    <div class="section-title">
+							<h1 class="titulo">Mi Perfil</h1>
+						</div>
+					</div>
+				</div>
+				<hr />
+				<ng-container  *ngIf="user != undefined">
+					<div class="row mt-4 mb-4">
+						<div class="col-4">
+							<label for="" class="descripcion">Nombre</label>
+							<input type="text" class="form-control"   placeholder="Nombre" value="{{user.nombre}}" /> 
+						 </div>
+						 <div class="col-4">
+							<label for="" class="descripcion">Apellido</label>
+							<input type="text" class="form-control"  placeholder="Apellido" value="{{user.apellido}}" /> 
+						</div>
+					</div>
+					<div class="row mt-4 mb-4">
+						<div class="col-4">
+							<label for="" class="descripcion">Correo</label>
+							<input type="text" class="form-control"   placeholder="Correo Electronico" value="{{user.correo}}" /> 
+						 </div>
+						 <div class="col-4">
+							<label for="" class="descripcion">F. Nac</label>
+							<input type="text" class="form-control"  placeholder="Fecha de Nacimiento"  value="{{user.f_nac}}" /> 
+						 </div>
+						
+					</div>
+					<div class="row mt-4 mb-4">
+						
+						 <div class="col-4">
+							<label for="" class="descripcion">DNI</label>
+							<input type="text" class="form-control" placeholder="DNI" value="{{user.dni}}" /> 
+						</div>
+						<div class="col-4">
+							<label for="" class="descripcion">Rol</label>
+							<input type="text" class="form-control"  placeholder="Rol"  value="{{user.rol}}" /> 
+						 </div>
+					</div>
+				</ng-container>
+
+					<a routerLink="/" type="button" class="btn btn-primary mb-4 marleft">Cerrar</a>
+
+			</div>
+		</section>
+
+		<app-footer></app-footer>

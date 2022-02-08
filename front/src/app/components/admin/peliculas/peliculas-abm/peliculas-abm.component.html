@@ -1,0 +1,34 @@
+<app-header></app-header>
+<div class="table-responsive">
+    <table class="table text-white">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Fecha Estreno</th>
+          <th scope="col">Clasificacion</th>
+          <th scope="col">Reputacion (0 a 5)</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Stock</th>
+          <th scope="col">Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of peliculas">
+          <th scope="row">{{item._id}}</th>
+          <td>{{item.nombre}}</td>
+          <td>{{item.estreno}}</td>
+          <td>{{item.clasificacion}}</td>
+          <td>{{item.stars}}</td>
+          <td>${{item.precio}}</td>
+          <td>{{item.cantidad}}</td>
+          <td>
+             <a [routerLink]="['/peliculas/editar/',item._id]" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+             <a (click)="eliminar(item._id)" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <app-footer></app-footer>

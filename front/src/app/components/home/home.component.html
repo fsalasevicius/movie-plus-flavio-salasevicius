@@ -1,0 +1,34 @@
+<app-header></app-header>
+
+<main>
+
+    <div class="pelicula-banner">
+        <div class="contenedor">
+            <h3 class="titulo">Jurassic World 3</h3>
+            <p class="subtitulo">Estreno 2022.</p>
+            <img src="../../../assets/img/primera.jpg" alt="">
+            <p class="descripcion">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem architecto maiores sapiente esse eum numquam explicabo deserunt suscipit illum vero tempore iste voluptatum, consectetur enim dignissimos laborum cupiditate qui reprehenderit.
+            </p>
+            <button role="button" class="btn btn-primary mt-2"><i class="fas fa-play padrig"></i>Reproducir</button>
+            <button role="button" class="btn btn-info mt-2 marleft"><i class="fas fa-info-circle padrig"></i>Más información</button>
+        </div>
+    </div>
+
+    <div class="peliculas-recomendadas contenedor">
+        
+        <div class="contenedor-titulo-controles">
+            <h3>Películas Recomendadas</h3>
+        </div>
+
+        <carousel>
+            <div class="carousel-cell" *ngFor="let element of peli_arr">
+                <a routerLink="peliculas/{{element._id}}"><img src="{{element.img}}" alt="{{element.alt}}" ></a>
+            </div>
+        </carousel>
+            
+    </div>
+
+</main>
+
+<app-footer></app-footer>

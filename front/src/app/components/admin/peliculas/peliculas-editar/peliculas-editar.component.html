@@ -1,0 +1,89 @@
+<app-header></app-header>
+    
+		<section class="portfolio-area pt-60">
+				<div class="container">
+					<div class="row flexbox-center">
+						<div class="col-lg-6  text-lg-left">
+							<div class="section-title">
+								<h1 class="titulo">Editar Pelicula</h1>
+							</div>
+						</div>
+					</div>
+					<hr />
+					<ng-container  *ngIf="peli != undefined">
+						<form *ngIf="peli!=undefined" #actualizarForm="ngForm" (ngSubmit)="actualizar(actualizarForm)">
+						<div class="row mt-4 mb-4">
+							<div class="col-4">
+								<label for="" class="descripcion">Nombre</label>
+								<input type="text" class="form-control"    name="nombre" [(ngModel)]="peli.nombre" required /> 
+							</div>
+							<div class="col-4">
+								<label for="" class="descripcion">Fecha de Estreno</label>
+								<input type="text" class="form-control"    name="estreno" [(ngModel)]="peli.estreno" required /> 
+							</div>
+							
+							<div class="col-4">
+								<label for="" class="descripcion">Duracion</label>
+								<input type="text" class="form-control"  name="duracion" [(ngModel)]="peli.duracion"  required /> 
+							</div>
+						</div>
+						<div class="row mt-4 mb-4">
+							<div class="col-12">
+								<label for="" class="descripcion">Descripcion</label>
+								<textarea class="form-control"   name="descripcion" [(ngModel)]="peli.descripcion"  required> 	</textarea>
+							</div>
+						</div>
+						<div class="row mt-4 mb-4">
+							<div class="col-4">
+								<label for="" class="descripcion">Genero</label>
+								<input type="text" class="form-control"    name="genero" [(ngModel)]="peli.genero" required /> 
+							</div>
+							<div class="col-4">
+								<label for="" class="descripcion">Elenco</label>
+								<input type="text" class="form-control" name="elenco" [(ngModel)]="peli.elenco"  required /> 
+							</div>
+							<div class="col-4">
+								<label for="" class="descripcion">Clasificacion</label>
+								<input type="text" class="form-control"  name="clasificacion" [(ngModel)]="peli.clasificacion"  required /> 
+							</div>
+						</div>
+						<div class="row mt-4 mb-4">
+							<div class="col-4">
+								<label for="" class="descripcion">Imagen</label>
+								<input type="text" class="form-control"  name="img" [(ngModel)]="peli.img" required /> 
+							</div>
+							<div class="col-4">
+								<label for="" class="descripcion">Stars</label>
+								<input type="text" class="form-control"  placeholder="Rol"  value="{{peli.stars}}" required /> 
+							</div>
+							<div class="col-4">
+								<label for="" class="descripcion">Precio</label>
+								<input type="text" class="form-control"  name="precio" [(ngModel)]="peli.precio"  required /> 
+							</div>
+						</div>
+						<div class="row mt-4 mb-4">
+							<div class="col-4">
+								<label for="" class="descripcion">Nueva</label>
+								<input type="text" class="form-control"  name="new" [(ngModel)]="peli.new" required /> 
+							</div>
+							<div class="col-4">
+								<label for="" class="descripcion">Cantidad</label>
+								<input type="text" class="form-control"  name="cantidad" [(ngModel)]="peli.cantidad"  required /> 
+							</div>
+							<div class="col-4">
+								<label for="" class="descripcion">Desc Corta</label>
+								<input type="text" class="form-control"  name="alt" [(ngModel)]="peli.alt"  required /> 
+							</div>
+						</div>	
+						<button  class="btn btn-success mb-4 marleft" type="submit">Guardar Cambios</button>
+						<a routerLink="/admin/peliculas/peliculas-abm" type="button" class="btn btn-primary mb-4 marleft">Volver al listado</a>
+					</form>
+					</ng-container>
+
+
+
+				</div>
+
+		</section>
+
+		<app-footer></app-footer>

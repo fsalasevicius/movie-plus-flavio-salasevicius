@@ -1,0 +1,33 @@
+<div class="contenedor-login">
+
+    <h1 class="titulo">Registro</h1>
+
+    <form #registroForm="ngForm" (ngSubmit)="registro(registroForm)"  class="col-6" >       
+
+            <div class="form-group">
+                <label class="descripcion">DNI</label>
+                <input type="text" id="dni" name="dni"  class="form-control" required  [(ngModel)]="user.dni" />
+                
+            </div>
+
+            <div class="form-group" >
+                <label for="correo" class="descripcion">Correo</label>
+                <input type="text" id="correo"  name="correo"  class="form-control" required  [(ngModel)]="user.correo" />
+            </div> 
+
+            <div class="form-group" >
+                <label for="nombre" class="descripcion">Nombre Completo</label>
+                <input type="text" id="nombre"  name="nombre"  class="form-control" required  [(ngModel)]="user.nombre" />
+            </div> 
+
+            <div class="form-group" >
+                <label for="password" class="descripcion">Contraseña</label>
+                <input type="password" id="password"  name="password"  class="form-control" required  [(ngModel)]="user.password" />
+            </div> 
+
+            <button type="submit" class="btn btn-primary mt-4">Registrarse</button>
+            
+        </form>
+
+        
+</div> 
