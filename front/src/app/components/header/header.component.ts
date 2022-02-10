@@ -16,7 +16,9 @@ export class HeaderComponent implements OnInit {
   public resultado:Array<any> = [];
   public peli_arr:Array<any> = [];
   public carrito_cliente :Array<any> = [];
+  public dventa : Array<any> = [];
   public subtotal = 0;
+  public venta : any = {};
   termino: string = '';
   constructor(private _datosService:DatosService, private _router:Router, private _clienteService:ClienteService,private _carritoService:CarritoService) { 
     this.token = localStorage.getItem('token');
@@ -44,10 +46,20 @@ export class HeaderComponent implements OnInit {
 
   }
 
+ 
   obtener_carrito(){
     this._carritoService.traer_carrito(this.user._id,this.token).subscribe(
       response=>{
         this.carrito_cliente =  response.data;
+        this.carrito_cliente.forEach(element => { 
+            this.dventa.push({
+              producto: element.producto._id,
+              subtotal: element.producto.precio,
+              cantidad: element.cantidad,
+              cliente: localStorage.getItem('_id')
+            });
+         
+      });
         this.calcular_carrito();
       }
     );
@@ -76,7 +88,23 @@ export class HeaderComponent implements OnInit {
   }
 
   comprar(){
+    this.venta.subtotal = this.subtotal;
+    this.venta.detalles = this.dventa;
+    let idcliente = localStorage.getItem('_id');
+    this.venta.cliente = idcliente;
     
+    this._clienteService.registro_compra(this.venta,this.token).subscribe(
+      response=>{
+        
+        console.log(this.carrito_cliente)
+        this.obtener_carrito();
+        this._router.navigate(['/user/compras/'+response.data._id]);
+      },
+      error=>{
+        console.log(error);
+        
+      }
+    );
   }
 
 }

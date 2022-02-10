@@ -18,7 +18,6 @@ const agregar_carrito = async function(req,res){
         res.status(500).send({message: 'NoAccess'});
     }
 }
-
 const traer_carrito = async function(req,res){
     if(req.body){
         

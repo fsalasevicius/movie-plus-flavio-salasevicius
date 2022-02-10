@@ -42,6 +42,17 @@ export class ClienteService {
     return this._http.post(this.url+'compra_cliente',data,{headers:headers});
   }
 
+  registro_compra(data:any,token:any):Observable<any>{
+    let headers = new HttpHeaders({'Content-Type':'application/json','Authorization':token});
+    return this._http.post(this.url+'registro_compra',data,{headers:headers});
+  }
+
+  obtener_ordenes(id:any,token:any):Observable<any>{
+    let headers = new HttpHeaders({'Content-Type':'application/json','Authorization':token});
+    return this._http.get(this.url+'obtener_ordenes/'+id,{headers:headers});
+  }
+
+
   isAuthenticate(){
     const token : any = localStorage.getItem('token');
   

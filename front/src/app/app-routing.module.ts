@@ -14,6 +14,7 @@ import { PeliculasComponent } from '../app/components/peliculas/peliculas.compon
 import { PeliculasAbmComponent } from './components/admin/peliculas/peliculas-abm/peliculas-abm.component';
 import { PeliculasEditarComponent } from './components/admin/peliculas/peliculas-editar/peliculas-editar.component';
 import { PeliculasNuevaComponent } from './components/admin/peliculas/peliculas-nueva/peliculas-nueva.component';
+import { DetalleComprasComponent } from './components/user/compras/detalle-compras/detalle-compras.component';
 
 
 const routes: Routes = [
@@ -29,7 +30,9 @@ const routes: Routes = [
 
   
   { path: 'mi-perfil', component: DatosComponent, canActivate:[AuthGuard]},
+  
   { path: 'mis-compras', component: ComprasComponent, canActivate:[AuthGuard]},
+  { path: 'mis-compras/:id', component: DetalleComprasComponent, canActivate:[AuthGuard]},
   { path: 'mi-lista', component: MiListaComponent, canActivate:[AuthGuard]},
   { path: '**', component: PaginaNoEncontradaComponent},
 ];

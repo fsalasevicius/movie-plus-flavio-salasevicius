@@ -25,6 +25,7 @@ import { CarritoComponent } from './components/carrito/carrito.component';
 import { PeliculasAbmComponent } from './components/admin/peliculas/peliculas-abm/peliculas-abm.component';
 import { PeliculasNuevaComponent } from './components/admin/peliculas/peliculas-nueva/peliculas-nueva.component';
 import { PeliculasEditarComponent } from './components/admin/peliculas/peliculas-editar/peliculas-editar.component';
+import { DetalleComprasComponent } from './components/user/compras/detalle-compras/detalle-compras.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { PeliculasEditarComponent } from './components/admin/peliculas/peliculas
     PeliculasComponent,
     PeliculasAbmComponent,
     PeliculasNuevaComponent,
-    PeliculasEditarComponent
+    PeliculasEditarComponent,
+    DetalleComprasComponent
   ],
   imports: [
     BrowserModule,

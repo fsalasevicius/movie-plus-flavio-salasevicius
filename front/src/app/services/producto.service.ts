@@ -40,6 +40,22 @@ export class ProductoService {
     return this._http.delete(this.url+'eliminar_pelicula/'+id,{headers:headers});
   }
 
+  obtener_detalles_ordenes(id:any,token:any):Observable<any>{
+    let headers = new HttpHeaders({'Content-Type':'application/json','Authorization':token});
+    return this._http.get(this.url+'obtener_detalles_ordenes/'+id,{headers:headers});
+  }
+
+  registro_compra(data:any,token:any):Observable<any>{
+    let headers = new HttpHeaders({'Content-Type':'application/json','Authorization':token});
+    return this._http.post(this.url+'registro_compra',data,{headers:headers});
+  }
+
+  obtener_ordenes(id:any,token:any):Observable<any>{
+    let headers = new HttpHeaders({'Content-Type':'application/json','Authorization':token});
+    return this._http.get(this.url+'obtener_ordenes/'+id,{headers:headers});
+  }
+
+
 }
 
 
