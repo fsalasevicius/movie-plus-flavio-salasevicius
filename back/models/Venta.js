@@ -7,6 +7,7 @@ var VentaSchema = Schema({
     cliente:  {type: Schema.ObjectId, ref: 'cliente', required: true},
     id_venta: {type: String, require: true},
     subtotal: {type: Number, require: true},
+    metodo_pago:   {type: String, default:'Contado', require: true},
     estado:   {type: String, require: true},
     obs:      {type: String, require: true},
     creado:   {type:Date, default: Date.now, require: true}

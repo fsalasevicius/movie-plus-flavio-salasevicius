@@ -52,6 +52,11 @@ export class ClienteService {
     return this._http.get(this.url+'obtener_ordenes/'+id,{headers:headers});
   }
 
+  obtener_ventas(token:any):Observable<any>{
+    let headers = new HttpHeaders({'Content-Type':'application/json','Authorization':token});
+    return this._http.get(this.url+'obtener_ventas',{headers:headers});
+  }
+
 
   isAuthenticate(){
     const token : any = localStorage.getItem('token');

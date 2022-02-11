@@ -15,6 +15,7 @@ import { PeliculasAbmComponent } from './components/admin/peliculas/peliculas-ab
 import { PeliculasEditarComponent } from './components/admin/peliculas/peliculas-editar/peliculas-editar.component';
 import { PeliculasNuevaComponent } from './components/admin/peliculas/peliculas-nueva/peliculas-nueva.component';
 import { DetalleComprasComponent } from './components/user/compras/detalle-compras/detalle-compras.component';
+import { VentasIndexComponent } from './components/user/ventas/ventas-index/ventas-index.component';
 
 
 const routes: Routes = [
@@ -30,7 +31,7 @@ const routes: Routes = [
 
   
   { path: 'mi-perfil', component: DatosComponent, canActivate:[AuthGuard]},
-  
+  { path: 'ventas', component: VentasIndexComponent, canActivate:[AuthGuard]},
   { path: 'mis-compras', component: ComprasComponent, canActivate:[AuthGuard]},
   { path: 'mis-compras/:id', component: DetalleComprasComponent, canActivate:[AuthGuard]},
   { path: 'mi-lista', component: MiListaComponent, canActivate:[AuthGuard]},

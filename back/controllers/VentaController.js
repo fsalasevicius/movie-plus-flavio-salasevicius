@@ -81,9 +81,23 @@ const obtener_ordenes  = async function(req,res){
     }
 }
 
+const obtener_ventas = async function(req,res){
+    if(req.user){
+        let ventas = [];
+
+            ventas = await Venta.find().populate('cliente').sort({createdAt:-1});
+            res.status(200).send({data:ventas});
+
+            
+    }else{
+        res.status(500).send({message: 'NoAccess'});
+    }
+}
+
 module.exports = {
     compra_cliente,
     obtener_detalles_ordenes,
     registro_compra,
-    obtener_ordenes
+    obtener_ordenes,
+    obtener_ventas
 }
