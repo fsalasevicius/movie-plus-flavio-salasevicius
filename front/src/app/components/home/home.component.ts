@@ -18,9 +18,12 @@ export class HomeComponent implements OnInit {
     this.route.params.subscribe(
       params=>{
         this.id = params['id'];
-        this._productosService.obtener_producto(this.id).subscribe(
-        response=>{
-        })
+        if(this.id != undefined){
+          this._productosService.obtener_producto(this.id).subscribe(
+            response=>{
+            })
+        }
+        
       }
     )
   }

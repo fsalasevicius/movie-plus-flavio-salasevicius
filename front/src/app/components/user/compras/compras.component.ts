@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductoService } from 'src/app/services/producto.service';
 import { global } from '../../../services/global';
+import { ClienteService } from '../../../services/cliente.service';
 
 @Component({
   selector: 'app-compras',
@@ -14,13 +15,14 @@ export class ComprasComponent implements OnInit {
   public token = localStorage.getItem('token');
   public orden : any = {};
   public detalles : Array<any> = [];
-  public id = '';
+  public id:any = '';
   public ordenes : Array<any> = [];
 
   constructor(
     private _productoService:ProductoService,
+    private _clienteService:ClienteService
   ) { 
-    this.token = localStorage.getItem('token');
+
 
   }
 

@@ -7,11 +7,11 @@ var jwt = require('../helpers/jwt');
 const registro_cliente = async function(req,res){
     var data = req.body;
     var cliente_arr = [];
-
+    console.log(data)
     cliente_arr = await Cliente.find({dni:data.dni});
 
     if(cliente_arr.length !=0){
-        res.status(200).send({mensaje:'El cliente ya existe en la base de datos.', data : undefined});  
+        res.status(200).send({message:'El cliente ya existe en la base de datos.', data : undefined});  
     }else{   
         if(data.password){
             bcrypt.hash(data.password,null,null, async function(err,hash){
@@ -20,13 +20,12 @@ const registro_cliente = async function(req,res){
                     var reg = await Cliente.create(data);
                     res.status(200).send({data:reg});
                 }else{
-                    es.status(200).send({mensaje:'Error del Servidor', data : undefined});
+                    es.status(200).send({message:'Error del Servidor', data : undefined});
                 }
             })
         }else{
-            res.status(200).send({mensaje:'La contraseña esta vacia', data : undefined});
+            res.status(200).send({message:'La contraseña esta vacia', data : undefined});
         }
-        res.status(200).send({mensaje:reg});
     }
 }
 

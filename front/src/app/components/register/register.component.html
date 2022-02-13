@@ -1,33 +1,40 @@
-<div class="contenedor-login">
-
-    <h1 class="titulo">Registro</h1>
-
-    <form #registroForm="ngForm" (ngSubmit)="registro(registroForm)"  class="col-6" >       
-
-            <div class="form-group">
-                <label class="descripcion">DNI</label>
-                <input type="text" id="dni" name="dni"  class="form-control" required  [(ngModel)]="user.dni" />
-                
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="wrap">
+                    <div class="login-wrap p-4 p-md-5">
+                  <div class="d-flex">
+                      <div class="w-100">
+                          <h3 class="mb-4">Registro de Usuario</h3>
+                      </div>
+                  </div>
+                        <form #registroForm="ngForm" (ngSubmit)="registro(registroForm)">
+                      <div class="form-group mt-3">
+                          <input type="text" class="form-control"  id="dni" name="dni" [(ngModel)]="user.dni" required>
+                          <label class="form-control-placeholder" [(ngModel)]="user.dni">DNI</label>
+                      </div>
+                      <div class="form-group mt-3">
+                        <input type="text" class="form-control"  id="correo" name="correo" [(ngModel)]="user.correo" required>
+                        <label class="form-control-placeholder" [(ngModel)]="user.correo">Correo</label>
+                     </div>
+                     <div class="form-group mt-3">
+                        <input type="text" class="form-control"  id="nombre" name="nombre" [(ngModel)]="user.nombre" required>
+                        <label class="form-control-placeholder" [(ngModel)]="user.nombre">Nombre</label>
+                     </div>
+                <div class="form-group">
+                  <input  id="password"  name="password"  [(ngModel)]="user.password" type="password" class="form-control" required>
+                  <label class="form-control-placeholder" for="password">Password</label>
+                  <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="form-control btn btn-primary rounded submit px-3">Registrarse</button>
+                </div>
+              </form>
+              <p class="text-center">¿Ya tenes cuenta? <a data-toggle="tab" routerLink="/login">Logueate!</a></p>
+               </div>
+          </div>
             </div>
-
-            <div class="form-group" >
-                <label for="correo" class="descripcion">Correo</label>
-                <input type="text" id="correo"  name="correo"  class="form-control" required  [(ngModel)]="user.correo" />
-            </div> 
-
-            <div class="form-group" >
-                <label for="nombre" class="descripcion">Nombre Completo</label>
-                <input type="text" id="nombre"  name="nombre"  class="form-control" required  [(ngModel)]="user.nombre" />
-            </div> 
-
-            <div class="form-group" >
-                <label for="password" class="descripcion">Contraseña</label>
-                <input type="password" id="password"  name="password"  class="form-control" required  [(ngModel)]="user.password" />
-            </div> 
-
-            <button type="submit" class="btn btn-primary mt-4">Registrarse</button>
-            
-        </form>
-
-        
-</div> 
+        </div>
+    </div>
+</section>

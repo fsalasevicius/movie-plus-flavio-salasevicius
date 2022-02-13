@@ -1,11 +1,18 @@
 <app-header></app-header>
     
-		<section class="portfolio-area pt-60">
+		<section class="portfolio-area pt-60 mb-3">
 			<div class="container">
 				<div class="row flexbox-center">
 					<div class="col-lg-6 text-center text-lg-left">
 					    <div class="section-title">
-							<h1 class="titulo">Mis Compras</h1>
+							<ng-container *ngIf="user.rol">
+								<ng-container *ngIf="user.rol === 'Admin'">
+									<h1 class="titulo">Detalle de Venta</h1>
+								</ng-container>
+								<ng-container *ngIf="user.rol === 'Cliente'">
+									<h1 class="titulo">Mis Compras</h1>
+								</ng-container>
+							</ng-container>
 						</div>
 					</div>
 				</div>
@@ -13,10 +20,6 @@
 				
                 <div class="row">
 					<div class="col-lg-12 ml-auto" *ngIf="orden != undefined">
-					  <div class="d-flex align-items-center justify-content-between mb-4 pb-sm-2">
-											
-						</div>
-  
 						
 						<h4 class="text-white">Detalles de la compra:</h4>
 						<div class="row">
@@ -35,15 +38,7 @@
 										<th class="border-0 py-2 pl-0">Fecha:</th>
 										<td class="border-0 py-2 px-0 text-muted">{{orden.creado|date}}</td>
 									  </tr>
-									 
-									</tbody>
-								  </table>
-								</div>
-								<div class="col-lg-6">
-								  <table class="table mb-0">
-									<tbody>
-									
-									
+
 									  <tr>
 										<th class="border-0 py-2 pl-0">Estado:</th>
 										<td class="border-0 py-2 px-0 text-muted">
@@ -57,6 +52,7 @@
 										</td>
 									
 									  </tr>
+									 
 									</tbody>
 								  </table>
 								</div>
@@ -72,7 +68,7 @@
 						  <div id="order-1" class="collapse show" data-parent="#orders">
 							<div class="rounded">
 							  <div class="table-responsive">
-								<table class="table mb-0">
+								<table class="table mb-0 ">
 								  <tbody>
 									<tr *ngFor="let item of detalles">
 									  <td class="border-top-0">

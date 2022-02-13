@@ -55,6 +55,10 @@ export class ProductoService {
     return this._http.get(this.url+'obtener_ordenes/'+id,{headers:headers});
   }
 
+  registro_producto(data:any,token:any):Observable<any>{
+    let headers = new HttpHeaders({'Authorization':token});
+    return this._http.post(this.url+'registro_producto',data,{headers:headers});
+  }
 
 }
 

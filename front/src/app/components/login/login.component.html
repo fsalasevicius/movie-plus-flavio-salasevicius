@@ -1,26 +1,33 @@
- <div class="contenedor-login">
-
-    <h1 class="titulo">Login</h1>
-
-        <form  #loginForm="ngForm" (ngSubmit)="func_login(loginForm)" class="col-6" >          
-
-            <div class="form-group">
-                <label class="descripcion" name='dni' [(ngModel)]="user.dni">DNI</label>
-                <input type="text" id="dni" name="dni"  class="form-control" required  [(ngModel)]="user.dni" />
-                
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="wrap">
+                    <div class="login-wrap p-4 p-md-5">
+                  <div class="d-flex">
+                      <div class="w-100">
+                          <h3 class="mb-4">Login</h3>
+                      </div>
+                  </div>
+                        <form class="signin-form" #loginForm="ngForm" (ngSubmit)="func_login(loginForm)">
+                      <div class="form-group mt-3">
+                          <input type="text" class="form-control"  id="dni" name="dni" [(ngModel)]="user.dni" required>
+                          <label class="form-control-placeholder" [(ngModel)]="user.dni">DNI</label>
+                          
+                      </div>
+                <div class="form-group">
+                  <input  id="password"  name="password"  [(ngModel)]="user.password" type="password" class="form-control" required>
+                  <label class="form-control-placeholder" for="password">Password</label>
+                  <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="form-control btn btn-primary rounded submit px-3">Ingresar</button>
+                </div>
+              </form>
+              <p class="text-center">¿No tienes cuenta? <a data-toggle="tab" routerLink="/register">Registrate!</a></p>
             </div>
-
-            <div class="form-group" >
-                <label for="password" class="descripcion">Contraseña</label>
-                <input type="password" id="password"  name="password"  class="form-control" required  [(ngModel)]="user.password" />
-            </div> 
-
-            <button type="submit" class="btn btn-primary mt-4">Ingresar</button>
-            
-        </form>
-
-        <div class="mt-4">
-            <button routerLink="/register" class="btn btn-secondary">Si no tenes cuenta registrate</button>
+          </div>
+            </div>
         </div>
-        
-</div> 
+    </div>
+</section>

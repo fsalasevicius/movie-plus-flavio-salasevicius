@@ -17,6 +17,7 @@ var ProductoSchema = Schema({
     precio:        {type: Number, default: 0, required: true},
     cantidad:      {type: String, required: true},
     alt:           {type: String, required: true},
+    trailer:       {type: String, required: true},
     creado:        {type:Date, default: Date.now, require: true}
 });
 

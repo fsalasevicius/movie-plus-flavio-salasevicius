@@ -25,7 +25,7 @@ const obtener_producto = async function(req,res){
 const obtener_pelicula = async function(req,res){
     if(req.body){
         var id = req.params['id'];
-        var reg = await Producto.findOne({producto:id});
+        var reg = await Producto.findOne({_id:id});
         res.status(200).send({data:reg});
     }else{
         res.status(500).send({message: 'NoAccess'});
@@ -69,11 +69,37 @@ const eliminar_pelicula = async function(req,res){
         res.status(500).send({message: 'NoAccess'});
     }
 }
+
+const registro_producto = async function(req,res){
+    if(req.user){
+
+        let data = req.body;
+  
+        let productos = await Producto.find({nombre:data.nombre});
+
+        if(productos.length == 0){
+          
+            let reg = await Producto.create(data);
+            
+                    await Producto_etiqueta.create({
+                        producto: reg._id,
+                    });
+
+            res.status(200).send({data:reg});
+        }else{
+            res.status(200).send({data:undefined, message: 'La pelicula ya existe'});
+        }
+    }else{
+        res.status(500).send({message: 'NoAccess'});
+    }
+}
+
 module.exports = {
     listar_productos,
     obtener_producto,
     obtener_pelicula,
     actualizar_pelicula,
-    eliminar_pelicula
+    eliminar_pelicula,
+    registro_producto
     
 }

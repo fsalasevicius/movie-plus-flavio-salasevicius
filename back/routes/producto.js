@@ -11,5 +11,6 @@ api.get('/obtener_producto/:id',[auth.auth],productoController.obtener_producto)
 api.get('/obtener_pelicula/:id',[auth.auth],productoController.obtener_pelicula);
 api.put('/actualizar_pelicula/:id',[auth.auth],productoController.actualizar_pelicula);
 api.delete('/eliminar_pelicula/:id',auth.auth,productoController.eliminar_pelicula);
+api.post('/registro_producto',[auth.auth],productoController.registro_producto);
 
 module.exports = api;

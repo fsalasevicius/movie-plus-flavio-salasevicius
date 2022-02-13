@@ -45,7 +45,7 @@ export class DetalleComponent implements OnInit, OnDestroy {
        this.peli_arr =  response.data;
        this.resultado = response.data;
        const selec = this.peli_arr.filter(peliculas => peliculas._id == this.id);
-      this.cant = selec[0].cantidad;
+       this.cant = 1
     
       },(err)=>{
       this.hayError = true;

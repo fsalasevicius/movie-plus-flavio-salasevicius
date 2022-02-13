@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'peliculas', component: PeliculasComponent},
   { path: 'peliculas/:id', component: DetalleComponent},
   { path: 'admin/peliculas/peliculas-abm', component: PeliculasAbmComponent, canActivate:[AuthGuard]},
-  { path: 'peliculas/alta', component: PeliculasNuevaComponent, canActivate:[AuthGuard]},
+  { path: 'admin/peliculas/alta', component: PeliculasNuevaComponent, canActivate:[AuthGuard]},
   { path: 'peliculas/editar/:id', component: PeliculasEditarComponent, canActivate:[AuthGuard]},
 
   

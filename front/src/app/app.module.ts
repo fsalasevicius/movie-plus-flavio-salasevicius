@@ -61,7 +61,7 @@ import { VentasIndexComponent } from './components/user/ventas/ventas-index/vent
     ReactiveFormsModule,
     FormsModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
